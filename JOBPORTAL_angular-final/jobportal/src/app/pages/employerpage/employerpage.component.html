@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Job Posting Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+   
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs" id="myTabs">
+            <li class="nav-item">
+                <a class="nav-link active" id="postJobTab" data-toggle="tab" href="employerpage">Post Job</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="postedJobsTab" data-toggle="tab" href="postedjobs">Posted Jobs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="logoutTab" href="">Logout</a>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Post Job Section -->
+            <div class="tab-pane fade show active" id="postJobSection">
+                <div class="container">
+                    <div class="form" >
+                        <h2>Job Posting Form</h2>
+                        <hr>
+                        <form #jobForm="ngForm" (ngSubmit)="submitJob(jobData)">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                
+                                <label for="jobTitle">Job Title:</label>
+                                <input type="text" class="form-control" id="jobTitle" name="jobTitle" placeholder="Enter job title" required
+                                    [(ngModel)]="jobData.jobTitle" #jobTitle="ngModel">
+                           
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label for="companyName">Company Name:</label>
+                                <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Enter company name" required
+                                    [(ngModel)]="jobData.companyName" #companyName="ngModel">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="country">Country:</label>
+                                    <input type="text" class="form-control" id="country" name="country" placeholder="Enter country" required
+                                        [(ngModel)]="jobData.country" #country="ngModel">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="state">State:</label>
+                                    <input type="text" class="form-control" id="state" name="state" placeholder="Enter state" required
+                                        [(ngModel)]="jobData.state" #state="ngModel">
+                                </div>
+                            
+                            
+                                <div class="form-group col-md-3">
+                                    <label for="minExperience">Minimum Experience:</label>
+                                    <input type="text" class="form-control" id="minExperience" name="minExperience" placeholder="Enter minimum experience" required
+                                        [(ngModel)]="jobData.minExperience" #minExperience="ngModel">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="maxExperience">Maximum Experience:</label>
+                                    <input type="text" class="form-control" id="maxExperience" name="maxExperience" placeholder="Enter maximum experience" required
+                                        [(ngModel)]="jobData.maxExperience" #maxExperience="ngModel">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="minSalary">Minimum Salary:</label>
+                                    <input type="text" class="form-control" id="minSalary" name="minSalary" placeholder="Enter minimum salary" required
+                                        [(ngModel)]="jobData.minSalary" #minSalary="ngModel">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="maxSalary">Maximum Salary:</label>
+                                    <input type="text" class="form-control" id="maxSalary" name="maxSalary" placeholder="Enter maximum salary" required
+                                        [(ngModel)]="jobData.maxSalary" #maxSalary="ngModel">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                <label for="currency">Currency:</label>
+                                <input type="text" class="form-control" id="currency" name="currency" placeholder="Enter currency" required
+                                    [(ngModel)]="jobData.currency" #currency="ngModel">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="language">Language:</label>
+                                <input type="text" class="form-control" id="language" name="language" placeholder="Enter language requirements" required
+                                    [(ngModel)]="jobData.language" #language="ngModel">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="skills">Skills Required:</label>
+                                <input type="text" class="form-control" id="skills" name="skills" placeholder="Enter required skills" required
+                                    [(ngModel)]="jobData.skills" #skills="ngModel">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="jobType">Job Type:</label>
+                                <input type="text" class="form-control" id="jobType" name="jobType" placeholder="Enter job type" required
+                                    [(ngModel)]="jobData.jobType" #jobType="ngModel">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="openings">Openings:</label>
+                                <input type="number" class="form-control" id="openings" name="openings" placeholder="Enter number of openings" required
+                                    [(ngModel)]="jobData.openings" #openings="ngModel">
+                            </div>
+                            
+                            <div class="form-group col-md-12">
+                                <label for="jobDescription">Job Description:</label>
+                                <textarea class="form-control" id="jobDescription" name="jobDescription"  placeholder="Enter job description" required
+                                    [(ngModel)]="jobData.jobDescription" #jobDescription="ngModel"></textarea>
+                            </div>
+                        </div>
+                            <button type="submit" class="btn btn-primary">Post Job</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div _ngcontent-ng-c75484632="" class="container-fluid footer mt-5">
+            <div _ngcontent-ng-c75484632="" class="row"><div _ngcontent-ng-c75484632="" class="col-lg-6 mt-3 mb-3">
+              <h1 _ngcontent-ng-c75484632="" style="font-weight: bold;
+              color: #fff;
+              font-size: 20px;">Job Fynder</h1><p _ngcontent-ng-c75484632="" style="color: #fff;
+        font-size: 12px;">Find your Dream Job Here</p>
+            </div><div _ngcontent-ng-c75484632="" class="col-lg-4 mt-3 mb-3">
+              <a  _ngcontent-ng-c75484632="" routerlink="" ng-reflect-router-link="" href="/" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Home</a>
+              <a _ngcontent-ng-c75484632="" routerlink="about" ng-reflect-router-link="about" href="/about" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">About</a>
+              <a _ngcontent-ng-c75484632="" routerlink="contact" ng-reflect-router-link="contact" href="/contact" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Contact</a>
+              <a _ngcontent-ng-c75484632="" routerlink="privacy" ng-reflect-router-link="privacy" href="/" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Privacy &amp; policy</a>
+            </div>
+            <div _ngcontent-ng-c75484632="" class="col-lg-2 mt-3 mb-3" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+              <i _ngcontent-ng-c75484632="" class="bi bi-facebook" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+                <i _ngcontent-ng-c75484632="" class="bi bi-whatsapp" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+                  <i _ngcontent-ng-c75484632="" class="bi bi-instagram" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+                    <i _ngcontent-ng-c75484632="" class="bi bi-youtube" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a>
+                  </div>
+                </div>
+              </div>
+
+    <!-- Bootstrap JS (Popper.js and Bootstrap JS) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

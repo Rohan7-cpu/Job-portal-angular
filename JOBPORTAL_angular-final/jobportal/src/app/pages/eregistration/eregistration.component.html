@@ -1,0 +1,57 @@
+<div class="employer-registration-container">
+  <div class="form" >
+    <div class="employer-registration-form">
+      <h2>Registration</h2>
+      <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required [(ngModel)]="name">
+  
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required [(ngModel)]="email" #emailInput="ngModel">
+          <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+            <p class="error-message">Please enter a valid email address.</p>
+          </div>
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="tel" id="number" name="number" required [(ngModel)]="number" #phoneNumberInput="ngModel">
+          <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.dirty || phoneNumberInput.touched)">
+            <p class="error-message">Please enter a valid phone number.</p>
+          </div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required [(ngModel)]="password" #passwordInput="ngModel">
+          <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+            <p class="error-message">Please enter a password.</p>
+          </div>
+        <!-- Your form fields here -->
+        <p>Already a user?</p>
+        <a routerLink="/elogin">Click Here</a><br>
+        <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+
+        <div *ngIf="isRegisteredIn" class="success-message"><p>You are successfully Registered!</p>
+        <button (click)="redirectToAnotherPage()">Click Here to Login</button>
+      </div>
+
+      </form>
+    </div>
+  </div>
+  <br><br>
+</div>
+<div _ngcontent-ng-c75484632="" class="container-fluid footer mt-5">
+  <div _ngcontent-ng-c75484632="" class="row"><div _ngcontent-ng-c75484632="" class="col-lg-6 mt-3 mb-3">
+    <h1 _ngcontent-ng-c75484632="" style="font-weight: bold;
+    color: #fff;
+    font-size: 20px;">Job Fynder</h1><p _ngcontent-ng-c75484632="" style="color: #fff;
+font-size: 12px;">Find your Dream Job Here</p>
+  </div><div _ngcontent-ng-c75484632="" class="col-lg-4 mt-3 mb-3">
+    <a  _ngcontent-ng-c75484632="" routerlink="" ng-reflect-router-link="" href="/" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Home</a>
+    <a _ngcontent-ng-c75484632="" routerlink="about" ng-reflect-router-link="about" href="/about" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">About</a>
+    <a _ngcontent-ng-c75484632="" routerlink="contact" ng-reflect-router-link="contact" href="/contact" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Contact</a>
+    <a _ngcontent-ng-c75484632="" routerlink="privacy" ng-reflect-router-link="privacy" href="/" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Privacy &amp; policy</a>
+  </div>
+  <div _ngcontent-ng-c75484632="" class="col-lg-2 mt-3 mb-3" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+    <i _ngcontent-ng-c75484632="" class="bi bi-facebook" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+      <i _ngcontent-ng-c75484632="" class="bi bi-whatsapp" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+        <i _ngcontent-ng-c75484632="" class="bi bi-instagram" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+          <i _ngcontent-ng-c75484632="" class="bi bi-youtube" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a>
+        </div>
+      </div>
+    </div>

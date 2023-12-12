@@ -1,0 +1,49 @@
+<body>
+<div class="login-container">
+    <div class="login-form">
+      <h1>Login</h1>
+      <form (submit)="onSubmit()">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        <div style="font-size: medium;">
+        <p>Not yet registered?&nbsp;<a  routerLink="/jsregistration">Register</a></p>
+        <p>Forgot Password...!&nbsp;<a (click)="storeEmailForReset()" routerLink="/jsresetpass">Reset Password</a></p></div>
+        <button type="submit">Login</button><br>
+      </form>
+      <div style="font-size:medium;">
+        <p><u>Note:</u>&nbsp; To reset your password please enter your valid email above
+           and click on forget password to create a new password </p>
+      </div>
+      
+      <!-- Show this section after successful login and email/password are entered -->
+      <div *ngIf="isLoggedIn && email && password">
+        <p>You are successfully logged in!</p>
+        <button (click)="redirectToAnotherPage()">Go to Another Page</button>
+      
+    </div>
+  </div>
+</div>
+<div _ngcontent-ng-c75484632="" class="container-fluid footer mt-5">
+  <div _ngcontent-ng-c75484632="" class="row"><div _ngcontent-ng-c75484632="" class="col-lg-6 mt-3 mb-3">
+    <h1 _ngcontent-ng-c75484632="" style="font-weight: bold;
+    color: #fff;
+    font-size: 20px;">Job Fynder</h1><p _ngcontent-ng-c75484632="" style="color: #fff;
+font-size: 12px;">Find your Dream Job Here</p>
+  </div><div _ngcontent-ng-c75484632="" class="col-lg-4 mt-3 mb-3">
+    <a  _ngcontent-ng-c75484632="" routerlink="" ng-reflect-router-link="" href="/" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Home</a>
+    <a _ngcontent-ng-c75484632="" routerlink="about" ng-reflect-router-link="about" href="/about" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">About</a>
+    <a _ngcontent-ng-c75484632="" routerlink="contact" ng-reflect-router-link="contact" href="/contact" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Contact</a>
+    <a _ngcontent-ng-c75484632="" routerlink="privacy" ng-reflect-router-link="privacy" href="/" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Privacy &amp; policy</a>
+  </div>
+  <div _ngcontent-ng-c75484632="" class="col-lg-2 mt-3 mb-3" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+    <i _ngcontent-ng-c75484632="" class="bi bi-facebook" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+      <i _ngcontent-ng-c75484632="" class="bi bi-whatsapp" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+        <i _ngcontent-ng-c75484632="" class="bi bi-instagram" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+          <i _ngcontent-ng-c75484632="" class="bi bi-youtube" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a>
+        </div>
+      </div>
+    </div>
+</body>

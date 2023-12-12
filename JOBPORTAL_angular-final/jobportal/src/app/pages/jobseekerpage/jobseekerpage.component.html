@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Job Posting Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs" id="myTabs">
+            <li class="nav-item">
+                <a class="nav-link active" id="profile" data-toggle="tab" href="profilepage">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="apply" data-toggle="tab" href="applyjobs">Apply Jobs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="logout" href="">Logout</a>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Post Job Section -->
+            <div class="tab-pane fade show active" id="profile">
+                
+                <div class="container">
+                    <div class="col-md-12">
+                        <h2 style="color: #0c0d0d; font-size: 30px; margin-top: 10px; font-weight: bold; text-align: center;">Profile</h2>
+                        <hr>
+            
+                        <form  (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+                            <!-- Your form fields -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="name">Full Name: </label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="{{name}}"
+                                        required [(ngModel)]="name" value="{{name}}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="phone">Email:</label>
+                                    <input type="email" class="form-control" id="email" placeholder="{{email}}" required
+                                        [(ngModel)]="email" value="{{email}}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="phone">Phone Number:</label>
+                                    <input type="tel" class="form-control" id="number" placeholder="{{number}}" required
+                                        [(ngModel)]="number" value="{{number}}">
+                                </div>
+                              
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="position">Tenth Percentage:</label>
+                                    <input type="text" class="form-control" id="tenthPercentage" placeholder="{{tenthPercentage}}"
+                                        required [(ngModel)]="tenthPercentage" value="{{tenthPercentage}}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="position">Inter Percentage:</label>
+                                    <input type="text" class="form-control" id="interPercentage" placeholder="{{interPercentage}}"
+                                        required [(ngModel)]="interPercentage" value="{{interPercentage}}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="position">Graduation Percentage:</label>
+                                    <input type="text" class="form-control" id="graduationPercentage"
+                                        placeholder="{{graduationPercentage}}" required [(ngModel)]="graduationPercentage" value="{{graduationPercentage}}">
+                                </div>
+                            </div>
+            <div class="row">
+                            <div class="col-md-6">
+                                <label for="position">State:</label>
+                                <input type="text" class="form-control" id="state"
+                                    placeholder="{{state}}" required [(ngModel)]="state" value="{{state}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="position">City:</label>
+                                <input type="text" class="form-control" id="city"
+                                    placeholder="{{city}}" required [(ngModel)]="city" value="{{city}}">
+                            </div>
+                        <div class="col-md-2">
+                                    <label for="coverLetter">Zip Code:</label>
+                                    <textarea class="form-control" id="zipcode" rows="1"
+                                        placeholder="{{zipCode}}" required [(ngModel)]="zipCode" value="{{zipCode}}"></textarea>
+                                </div>
+            
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="coverLetter">Intrested Fields:</label>
+                                    <textarea class="form-control" id="coverLetter" rows="3"
+                                        placeholder="{{interestedFields}}" required [(ngModel)]="interestedFields" value="{{interestedFields}}"></textarea>
+                                </div>
+                            
+                                <div class="col-md-4">
+                                    <label for="coverLetter">Skills:</label>
+                                    <textarea class="form-control" id="coverLetter" rows="3"
+                                        placeholder="{{skills}}" required [(ngModel)]="name" value="{{skills}}"></textarea>
+                                </div>
+                            
+                                
+                                    <div class="col-md-4">
+                                        <label for="coverLetter">Hobbies:</label>
+                                        <textarea class="form-control" id="hobbies" rows="3"
+                                            placeholder="{{hobbies}}" required [(ngModel)]="hobbies" value="{{hobbies}}"></textarea>
+                                    </div>
+                            </div>
+                                <div class="col-md-3">
+                                    <label for="resume">Upload Resume:</label>
+                                    <input type="file" class="form-control" id="resume" required>
+                                </div>
+            
+                                <button type="submit" class="btn btn-primary">Save</button>
+                               
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            
+                       
+                    
+                </div>
+                <div _ngcontent-ng-c75484632="" class="container-fluid footer mt-5">
+                    <div _ngcontent-ng-c75484632="" class="row"><div _ngcontent-ng-c75484632="" class="col-lg-6 mt-3 mb-3">
+                      <h1 _ngcontent-ng-c75484632="" style="font-weight: bold;
+                      color: #fff;
+                      font-size: 20px;">Job Fynder</h1><p _ngcontent-ng-c75484632="" style="color: #fff;
+                font-size: 12px;">Find your Dream Job Here</p>
+                    </div><div _ngcontent-ng-c75484632="" class="col-lg-4 mt-3 mb-3">
+                      <a  _ngcontent-ng-c75484632="" routerlink="" ng-reflect-router-link="" href="/" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Home</a>
+                      <a _ngcontent-ng-c75484632="" routerlink="about" ng-reflect-router-link="about" href="/about" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">About</a>
+                      <a _ngcontent-ng-c75484632="" routerlink="contact" ng-reflect-router-link="contact" href="/contact" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Contact</a>
+                      <a _ngcontent-ng-c75484632="" routerlink="privacy" ng-reflect-router-link="privacy" href="/" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;">Privacy &amp; policy</a>
+                    </div>
+                    <div _ngcontent-ng-c75484632="" class="col-lg-2 mt-3 mb-3" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+                      <i _ngcontent-ng-c75484632="" class="bi bi-facebook" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+                        <i _ngcontent-ng-c75484632="" class="bi bi-whatsapp" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+                          <i _ngcontent-ng-c75484632="" class="bi bi-instagram" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a><a _ngcontent-ng-c75484632="" href="#" target="_blank">
+                            <i _ngcontent-ng-c75484632="" class="bi bi-youtube" style=" color: #fff; text-decoration: none; padding: 0px 10px; font-size: 17px;"></i></a>
+                          </div>
+                        </div>
+                      </div>
+      
+    
+
+    <!-- Bootstrap JS (Popper.js and Bootstrap JS) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
